@@ -2,18 +2,18 @@
   position: sticky;
   top: 0;
   z-index: 40;
-  backdrop-filter: blur(14px);
-  background: linear-gradient(180deg, rgba(8, 13, 36, 0.9), rgba(8, 13, 36, 0.65));
-  border-bottom: 1px solid rgba(74, 111, 255, 0.22);
+  backdrop-filter: blur(10px);
+  background: transparent;
 }
 
 .inner {
   width: min(1160px, 92vw);
   margin: 0 auto;
   min-height: 72px;
-  display: flex;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
   align-items: center;
-  justify-content: space-between;
+  position: relative;
   gap: 14px;
 }
 
@@ -28,9 +28,10 @@
 
 .list {
   list-style: none;
-  display: flex;
+  display: inline-flex;
   align-items: center;
   gap: 10px;
+  justify-self: center;
 }
 
 .link {
@@ -56,13 +57,22 @@
   border-color: rgba(143, 170, 255, 0.45);
 }
 
+.placeholder {
+  width: 120px;
+}
+
 @media (max-width: 760px) {
   .inner {
     min-height: 64px;
+    display: flex;
     flex-direction: column;
     justify-content: center;
     padding: 10px 0;
     gap: 8px;
+  }
+
+  .placeholder {
+    display: none;
   }
 
   .list {

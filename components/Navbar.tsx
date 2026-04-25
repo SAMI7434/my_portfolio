@@ -47,6 +47,7 @@ export default function Navbar({ activePage }: { activePage?: string }) {
             </li>
           ))}
         </ul>
+        <div className={styles.placeholder} aria-hidden="true"></div>
       </div>
     </nav>
   );
