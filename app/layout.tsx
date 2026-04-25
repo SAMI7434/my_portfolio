@@ -5,6 +5,9 @@ export const metadata: Metadata = {
   title: 'Samiran Das - YouTube Packaging Specialist',
   description:
     'I help creators and brands package videos with stronger thumbnails and titles that drive better clicks.',
+  icons: {
+    icon: '/favicon.svg',
+  },
 };
 
 export default function RootLayout({
