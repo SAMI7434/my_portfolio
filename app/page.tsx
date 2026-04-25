@@ -23,16 +23,19 @@ export default function Home() {
         </div>
         <div className={styles.heroContent}>
           <div className={styles.hi}>
-           
-            <h1>
-              Building<br />
-              <em>Intelligent Web</em>
-            </h1>
-            <p className={styles.hsub}>
-              I build scalable ML-powered web apps, from clean frontend
-              interfaces to production-ready backend integration.{' '}
-              <b>Fast, reliable, and built for real users.</b>
-            </p>
+            <div className={styles.holeWrap}>
+              <div className={styles.holeCore} aria-hidden="true"></div>
+              <h1 className={styles.holeTitle}>
+                <span className={styles.buildingWord}>Building</span>
+                <br />
+                <em>Intelligent Web</em>
+              </h1>
+              <p className={styles.hsub + ' ' + styles.holeSub}>
+                I build scalable ML-powered web apps, from clean frontend
+                interfaces to production-ready backend integration.{' '}
+                <b>Fast, reliable, and built for real users.</b>
+              </p>
+            </div>
             <div className={styles.hbtns}>
               <div className={styles.btnp}>Let's Build Together</div>
               <div className={styles.btno}>View Projects</div>
