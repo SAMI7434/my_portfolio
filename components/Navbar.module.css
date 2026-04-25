@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700&family=Sora:wght@600;700;800&display=swap');
+
 .nav {
   position: absolute;
   top: 0;
@@ -8,24 +10,39 @@
 }
 
 .inner {
-  width: min(1160px, 92vw);
-  margin: 0 auto;
+  width: 100%;
+  margin: 0;
   min-height: 72px;
   display: grid;
   grid-template-columns: auto 1fr auto;
   align-items: center;
   position: relative;
   padding-top: 10px;
+  padding-left: clamp(12px, 2.2vw, 36px);
+  padding-right: clamp(12px, 2.2vw, 36px);
   gap: 14px;
 }
 
 .brand {
   text-decoration: none;
   color: #e8eeff;
+  font-family: 'Sora', sans-serif;
   font-weight: 800;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.11em;
   text-transform: uppercase;
-  font-size: 13px;
+  font-size: 15px;
+  line-height: 1;
+  background: linear-gradient(90deg, #e8eeff 0%, #b8cbff 45%, #8faaff 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 18px rgba(143, 170, 255, 0.32);
+  transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+.brand:hover {
+  transform: translateY(-1px);
+  filter: brightness(1.12);
 }
 
 .list {
@@ -38,29 +55,33 @@
 
 .link {
   text-decoration: none;
-  color: #b8cbff;
-  font-size: 14px;
+  color: #c7d6ff;
+  font-family: 'Outfit', sans-serif;
+  font-style: normal;
+  font-size: 8px;
   font-weight: 600;
-  padding: 9px 12px;
-  border-radius: 10px;
-  border: 1px solid transparent;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  padding: 6px 4px;
+  border-radius: 0;
+  border: none;
   transition: all 0.2s ease;
 }
 
 .link:hover {
-  color: #e8eeff;
-  background: rgba(74, 111, 255, 0.12);
-  border-color: rgba(74, 111, 255, 0.28);
+  color: #f2f6ff;
+  background: transparent;
+  text-shadow: 0 0 16px rgba(143, 170, 255, 0.42);
 }
 
 .active {
-  color: #e8eeff;
-  background: rgba(74, 111, 255, 0.2);
-  border-color: rgba(143, 170, 255, 0.45);
+  color: #f9fbff;
+  background: transparent;
+  text-shadow: 0 0 18px rgba(143, 170, 255, 0.52);
 }
 
 .placeholder {
-  width: 120px;
+  width: 160px;
 }
 
 @media (max-width: 760px) {
@@ -84,7 +105,8 @@
   }
 
   .link {
-    font-size: 13px;
-    padding: 8px 10px;
+    font-size: 7px;
+    letter-spacing: 0.11em;
+    padding: 6px 3px;
   }
 }
