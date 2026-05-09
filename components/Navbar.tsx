@@ -1,53 +1,21 @@
-import Link from 'next/link';
-import styles from './Navbar.module.css';
-
-type NavKey = 'home' | 'service' | 'portfolio' | 'product' | 'contact';
-
-export default function Navbar({ activePage }: { activePage?: string }) {
-  const links: { name: string; href: string; key: NavKey }[] = [
-    { name: 'Home', href: '/', key: 'home' },
-    { name: 'Services', href: '/service', key: 'service' },
-    { name: 'Portfolio', href: '/portfolio', key: 'portfolio' },
-    { name: 'Products', href: '/product', key: 'product' },
-    { name: 'Contact', href: '/contact', key: 'contact' },
-  ];
-
-  const normalized = (activePage || '').toLowerCase();
-  const aliasToKey: Record<string, NavKey> = {
-    home: 'home',
-    '/': 'home',
-    about: 'service',
-    services: 'service',
-    service: 'service',
-    projects: 'portfolio',
-    portfolio: 'portfolio',
-    skills: 'product',
-    products: 'product',
-    product: 'product',
-    contact: 'contact',
-  };
-
-  const activeKey = aliasToKey[normalized];
-
+export default function Navbar() {
   return (
-    <nav className={styles.nav}>
-      <div className={styles.inner}>
-        <Link href="/" className={styles.brand}>
-          Samiran Das
-        </Link>
-        <ul className={styles.list}>
-          {links.map((link) => (
-            <li key={link.href}>
-              <Link
-                href={link.href}
-                className={`${styles.link} ${activeKey === link.key ? styles.active : ''}`.trim()}
-              >
-                {link.name}
-              </Link>
+    <nav className="absolute top-0 left-0 right-0 z-10">
+      <div className="mx-auto flex h-16 max-w-6xl items-center justify-center px-6">
+        <ul className="flex translate-x-[60%] items-center gap-6 text-[0.70rem] tracking-[0.08em] text-neutral-200/80">
+          <li>
+            <a className="hover:text-neutral-200" href="/">Home</a>
+          </li>
+          <li>
+            <a className="hover:text-neutral-200" href="/projects">Projects</a>
+          </li>
+            <li>
+              <a className="hover:text-neutral-200" href="/skills">Skill</a>
             </li>
-          ))}
+          <li>
+              <a className="hover:text-neutral-200" href="#">Contact</a>
+          </li>
         </ul>
-        <div className={styles.placeholder} aria-hidden="true"></div>
       </div>
     </nav>
   );

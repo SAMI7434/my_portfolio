@@ -1,25 +1,15 @@
-import type { Metadata } from 'next';
 import './globals.css';
+import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Samiran Das - YouTube Packaging Specialist',
-  description:
-    'I help creators and brands package videos with stronger thumbnails and titles that drive better clicks.',
-  icons: {
-    icon: '/favicon.svg',
-  },
+  title: 'Samiran Das',
+  description: 'Portfolio site for Samiran Das',
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body>
-        <div className="site">{children}</div>
-      </body>
+      <body>{children}</body>
     </html>
   );
 }

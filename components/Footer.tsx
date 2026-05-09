@@ -1,28 +1,27 @@
-import Image from 'next/image';
-import emailIcon from '../icon/email.png';
-import facebookIcon from '../icon/facebook.png';
-import instagramIcon from '../icon/instagram.png';
-import linkedinIcon from '../icon/linkedin.png';
-import telegramIcon from '../icon/telegram.png';
-import styles from './Footer.module.css';
-
 const footerItems = [
-  { label: 'Email', href: 'mailto:sumanta@example.com', icon: emailIcon },
-  { label: 'Facebook', href: '#', icon: facebookIcon },
-  { label: 'Instagram', href: '#', icon: instagramIcon },
-  { label: 'LinkedIn', href: '#', icon: linkedinIcon },
-  { label: 'Telegram', href: '#', icon: telegramIcon },
+  {
+    label: 'Email',
+    href: 'https://mail.google.com/mail/?view=cm&fs=1&to=samirandas776@gmail.com'
+  },
+  { label: 'Facebook', href: '#' },
+  { label: 'Instagram', href: '#' },
+  { label: 'LinkedIn', href: 'https://www.linkedin.com/in/samiran-das-63a439264/' },
+  { label: 'Telegram', href: '#' },
 ];
 
 export default function Footer() {
   return (
-    <footer className={styles.footer}>
-      <div className={styles.items}>
-        {footerItems.map((item) => (
-          <a key={item.label} href={item.href} className={styles.item}>
-            <Image src={item.icon} alt={item.label} className={styles.icon} />
-          </a>
-        ))}
+    <footer className="relative mt-10">
+      <div className="mx-auto flex h-16 max-w-6xl items-center justify-center px-6">
+        <ul className="flex translate-x-[70%] items-center gap-5 text-[10px] tracking-[0.08em] text-neutral-200/70">
+          {footerItems.map((item) => (
+            <li key={item.label}>
+              <a className="hover:text-neutral-200" href={item.href}>
+                {item.label.toLowerCase()}
+              </a>
+            </li>
+          ))}
+        </ul>
       </div>
     </footer>
   );
