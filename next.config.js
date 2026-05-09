@@ -8,9 +8,6 @@ const nextConfig = {
     root: __dirname,
   },
 
-  // Standalone output for deployment
-  output: 'standalone',
-
   // Suppress Three.js Clock deprecation warning
   webpack: (config, { dev, isServer }) => {
     if (dev && !isServer) {
